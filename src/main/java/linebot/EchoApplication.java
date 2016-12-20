@@ -35,18 +35,6 @@ public class EchoApplication {
             }
         }
 
-        if (message.equals("尖叫聲")) {
-            reply = "啊啊啊啊啊啊啊!!!";
-        }
-
-        if (message.contains("我是說在座的各位都是")) {
-            reply = "垃圾";
-        }
-
-        if (message.contains("說話 這傻B")) {
-            reply = "我是小天使 耶比";
-        }
-
         if (message.contains("穩誠的專長是")) {
             int random = (int) (Math.random() * 2);
             if (random % 2 == 0) {
@@ -55,6 +43,7 @@ public class EchoApplication {
                 reply = "糗口口口的捏捏?";
             }
         }
+
         return new TextMessage(reply);
     }
 
