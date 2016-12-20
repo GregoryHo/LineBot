@@ -23,8 +23,17 @@ public class EchoApplication {
 
     @EventMapping
     public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
-        System.out.println("event: " + event);
-        return new TextMessage("Test.");
+        String message = event.getMessage().getText();
+	if (message.contains("我說冠儀 你說")) {
+	    return new TextMessage("帥");
+	} else if (message.equals("尖叫聲")) {
+	    return new TextMessage("啊啊啊啊啊!!"); 
+	} else if (message.contains("我是說在座的各位都是")) {
+	    return new TextMessage("口口");
+	} else {
+	    return new TextMessage(null);
+	}
+										        }
     }
 
     @EventMapping
