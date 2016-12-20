@@ -31,9 +31,8 @@ public class EchoApplication {
 	} else if (message.contains("我是說在座的各位都是")) {
 	    return new TextMessage("口口");
 	} else {
-	    return new TextMessage(null);
-	}
-										        }
+	    return new TextMessage(event.getSource().getUserId());
+	}					        
     }
 
     @EventMapping
